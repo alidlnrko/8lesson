@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Квантовая электродинамика (КЭД)</title>
+
+    <!-- Подключение MathJax для рендеринга формул -->
+    <script type="text/javascript" id="MathJax-script" async 
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+
+    <link rel="stylesheet" href="c:\Users\user\Desktop\ib project 2024-2025\web\quantym\first-lesson.css">
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <a href="#" class="logo">🌌 World of Particles</a>
+        <ul class="nav-links">
+            <li><a href="main_menu.html">В меню</a></li>
+            <li><a href="first_lesson.html">Разделы уроков</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="container">
+    <h2>🎥 Видеоурок</h2>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/ku02pExx52w?si=6j9FzXRwxF-iGyyI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <h1>📘 Квантовая электродинамика (КЭД)</h1>
+
+    <section class="theory">
+        <h2>📘 Теория</h2>
+        <p>Квантовая электродинамика (КЭД) — это квантовая теория взаимодействия заряженных частиц с электромагнитным полем. КЭД описывает, как частицы обмениваются фотонами и как эти обмены определяют электромагнитные взаимодействия.</p>
+
+        <h3>📘 Основные понятия</h3>
+        <ul>
+            <li><b>Виртуальные фотоны</b> — частицы-переносчики электромагнитного взаимодействия.</li>
+            <li><b>Диаграммы Фейнмана</b> — графические изображения взаимодействий частиц.</li>
+            <li><b>Электроны и позитроны</b> участвуют во взаимодействиях через обмен фотонами.</li>
+        </ul>
+
+        <h3>📘 Основные формулы</h3>
+        <p>Уравнение Дирака для электрона:  
+            \[
+            (i \gamma^\mu \partial_\mu - m) \psi = 0
+            \]
+        </p>
+        <p>Взаимодействие электрона с фотоном описывается оператором:  
+            \[
+            H_{int} = -e \bar{\psi} \gamma^\mu A_\mu \psi
+            \]
+        </p>
+    </section>
+
+    <section class="quiz-section">
+        <h2>🧪 Тест</h2>
+        <form id="quiz-form">
+            <div class="quiz-form">
+                <label>1. Какую роль играют фотоны в квантовой электродинамике?</label><br>
+                <input type="radio" name="q1" value="синий">Управляют движением частиц<br>
+                <input type="radio" name="q1" value="красный">Передают электромагнитное взаимодействие<br>
+                <input type="radio" name="q1" value="синий">Создают гравитационное поле<br>
+            </div>
+
+            <div class="quiz-form">
+                <label>2. Какой математический объект используется для визуализации взаимодействий в КЭД?</label><br>
+                <input type="radio" name="q2" value="синий">Волновая функция<br>
+                <input type="radio" name="q2" value="синий">Координатная ось<br>
+                <input type="radio" name="q2" value="красный">Диаграммы Фейнмана<br>
+            </div>
+
+            <div class="quiz-form">
+                <label>3. Какое уравнение описывает динамику электрона в КЭД?</label><br>
+                <input type="radio" name="q3" value="синий">Уравнение Шрёдингера<br>
+                <input type="radio" name="q3" value="красный">Уравнение Дирака<br>
+                <input type="radio" name="q3" value="синий">Закон Кулона<br>
+            </div>
+
+            <button type="button" id="check-btn">Проверить</button>
+        </form>
+        <div id="result"></div>
+    </section>
+</main>
+
+<footer>
+    <p>© 2024 World of Particles</p>
+</footer>
+
+<script>
+    document.getElementById("check-btn").addEventListener("click", checkQuiz);
+
+    function checkQuiz() {
+        let score = 0;
+        const answers = { q1: "красный", q2: "красный", q3: "красный" };
+        const formData = new FormData(document.getElementById("quiz-form"));
+
+        for (let [question, answer] of formData.entries()) {
+            if (answers[question] === answer) {
+                score++;
+            }
+        }
+
+        document.getElementById("result").innerText = "Вы набрали " + score + " из 3 баллов.";
+    }
+</script>
+
+</body>
+</html>
